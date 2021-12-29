@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Api", "TestTask.Api\TestTask.Api.csproj", "{88DC29DB-8D61-49FA-9BEA-DCD2A4BAA5F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Api", "TestTask.Api\TestTask.Api.csproj", "{88DC29DB-8D61-49FA-9BEA-DCD2A4BAA5F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Models", "TestTask.Models\TestTask.Models.csproj", "{F79E6828-7AE9-4AAB-AA73-00EF83C267B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Models", "TestTask.Models\TestTask.Models.csproj", "{F79E6828-7AE9-4AAB-AA73-00EF83C267B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Interfaces", "TestTask.Interfaces\TestTask.Interfaces.csproj", "{366A8B59-DDB1-422C-8446-DF118C69E0E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F79E6828-7AE9-4AAB-AA73-00EF83C267B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F79E6828-7AE9-4AAB-AA73-00EF83C267B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F79E6828-7AE9-4AAB-AA73-00EF83C267B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{366A8B59-DDB1-422C-8446-DF118C69E0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366A8B59-DDB1-422C-8446-DF118C69E0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366A8B59-DDB1-422C-8446-DF118C69E0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366A8B59-DDB1-422C-8446-DF118C69E0E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
