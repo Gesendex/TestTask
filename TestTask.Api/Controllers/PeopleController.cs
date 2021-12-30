@@ -18,8 +18,8 @@ namespace TestTask.Api.Controllers
         {
             _peopleRepository = peopleRepository;
         }
-        [HttpGet("GetPeople/{sex?}")]
-        public ActionResult<IEnumerable<Person>> GetPeople(string sex)
+        [HttpGet("GetPeople")]
+        public ActionResult<IEnumerable<Person>> GetPeople(string sex, int? x, int? y, int start = 0, int count = 50)
         {
             var people = _peopleRepository.GetPeople();
 
@@ -29,6 +29,13 @@ namespace TestTask.Api.Controllers
             }
 
             return Ok(people);//TODO: Нужно вернуть только id, name и sex, а age не выводить
+        }
+        [HttpGet("GetPersonById/{id}")]
+        public ActionResult<Person> GetPersonById(string id)
+        {
+            var person = _peopleRepository.GetPersonById(id);
+
+            return Ok(person);
         }
     }
 }
