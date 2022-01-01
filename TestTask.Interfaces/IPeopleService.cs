@@ -9,7 +9,7 @@ namespace TestTask.Interfaces
 {
     public interface IPeopleService
     {
-        public IQueryable<Person> GetPeople(string sex = null, int x = -1, int y = -1, int count = 50, int start = 0);
+        public IQueryable<Person> GetPeople(string sex, int x, int y, int count, int start);
         public Person GetPerson(string id);
     }
 }

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using TestTask.Models;
 using TestTask.Interfaces;
 using TestTask.Data;
+using TestTask.Api.Services;
 
 namespace TestTask.Api
 {
@@ -31,7 +32,9 @@ namespace TestTask.Api
         {
             services.AddDbContext<TestTaskDBContext>(p => p.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddTransient<IPeopleRepository, PeopleDBRepository>();
+            services.AddTransient<IPeopleService, PeopleService>();
             services.AddControllers();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TestTask.Api", Version = "v1" });
