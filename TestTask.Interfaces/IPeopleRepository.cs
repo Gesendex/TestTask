@@ -10,6 +10,6 @@ namespace TestTask.Interfaces
         public IQueryable<Person> GetPeople();
         public Person GetPersonById(string id);
         public IQueryable<Person> GetPeopleBySex(string sex);
-        public IQueryable<Person> GetPeopleByAge(int? min, int? max);
+        public IQueryable<Person> GetPeopleByAge(int min, int max);
     }
 }
