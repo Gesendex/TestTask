@@ -18,7 +18,7 @@ namespace TestTask.Api.Controllers
         [HttpGet("GetPeople")]
         public ActionResult<IEnumerable<Person>> GetPeople(string sex, int x = -1, int y = -1, int start = 0, int count = 50)
         {
-            
+
 
             return Ok();//TODO: Нужно вернуть только id, name и sex, а age не выводить
         }

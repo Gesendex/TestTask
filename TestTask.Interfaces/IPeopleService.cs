@@ -7,7 +7,7 @@ using TestTask.Models;
 
 namespace TestTask.Interfaces
 {
-    interface IPeopleService
+    public interface IPeopleService
     {
         public IQueryable<Person> GetPeople(string sex = null, int x = -1, int y = -1, int count = 50, int start = 0);
         public Person GetPerson(string id);
