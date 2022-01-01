@@ -19,4 +19,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestTask.Api\TestTask.Api.csproj" />
+    <ProjectReference Include="..\TestTask.Interfaces\TestTask.Interfaces.csproj" />
+    <ProjectReference Include="..\TestTask.Models\TestTask.Models.csproj" />
+  </ItemGroup>
+
 </Project>

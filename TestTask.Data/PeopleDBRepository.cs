@@ -18,7 +18,7 @@ namespace TestTask.Data
         /// Метод возвращает всех людей
         /// </summary>
         /// <returns>Возвращает коллекцию людей </returns>
-        public IEnumerable<Person> GetPeople()
+        public IQueryable<Person> GetPeople()
         {
             return _db.People;
         }
@@ -28,7 +28,7 @@ namespace TestTask.Data
         /// <param name="min">Нижняя граница возраста, передайте null если не хотите делать выборку по нижней границе</param>
         /// <param name="max">Верхняя граница возраста, передайте null если не хотите делать выборку по верхней границе</param>
         /// <returns>Коллекция люде в заданом возрастном промежутке</returns>
-        public IEnumerable<Person> GetPeopleByAge(int? min, int? max)
+        public IQueryable<Person> GetPeopleByAge(int? min, int? max)
         {
             if (!min.HasValue && !max.HasValue)
             {
@@ -50,11 +50,11 @@ namespace TestTask.Data
         /// </summary>
         /// <param name="sex">Пол человека</param>
         /// <returns>Коллекция людей указанного пола</returns>
-        public IEnumerable<Person> GetPeopleBySex(string sex)
+        public IQueryable<Person> GetPeopleBySex(string sex)
         {
             if(sex == null)
             {
-                return new Person[0];
+                return new Person[0].AsQueryable();
             }
             return _db.People.Where(p => p.Sex == sex);
 
