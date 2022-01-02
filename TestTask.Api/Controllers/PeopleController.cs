@@ -24,8 +24,8 @@ namespace TestTask.Api.Controllers
         [HttpGet("GetPeople")]
         public ActionResult<IEnumerable<Person>> GetPeople(string sex, int x, int y, int start, int count = 50)
         {
-            var result = _peopleService.GetPeople(sex, x, y, count, start).AsEnumerable();
-            return Ok(result);//TODO: Нужно вернуть только id, name и sex, а age не выводить
+            var result = _peopleService.GetPeople(sex, x, y, count, start).Select(s => new { Id = s.Id, Name = s.Name, Sex = s.Sex });
+            return Ok(result);
         }
 
         [HttpGet("GetPerson/{id}")]
