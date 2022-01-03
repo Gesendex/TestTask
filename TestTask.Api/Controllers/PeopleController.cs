@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using TestTask.Api.Queries;
 using TestTask.Interfaces;
 using TestTask.Models;
 
@@ -22,17 +23,19 @@ namespace TestTask.Api.Controllers
             _peopleService = peopleService;
         }
         [HttpGet("GetPeople")]
-        public ActionResult<IEnumerable<Person>> GetPeople(string sex, int x, int y, int start, int count = 50)
+        public IActionResult GetPeople(string sex, int x, int y,[FromQuery] PaginationQuery paginationQuery)
         {
-            var result = _peopleService.GetPeople(sex, x, y, count, start).Select(s => new { Id = s.Id, Name = s.Name, Sex = s.Sex });
+            var result = _peopleService.GetPeople(sex, x, y, paginationQuery.PageNumber, paginationQuery.PageSize)
+                .Select(s => new { Id = s.Id, Name = s.Name, Sex = s.Sex })
+                .AsEnumerable();
+            
             return Ok(result);
         }
-
         [HttpGet("GetPerson/{id}")]
-        public ActionResult<Person> GetPerson(string id)
+        public IActionResult GetPerson(string id)
         {
             var result = _peopleService.GetPerson(id);
-            return result;
+            return Ok(result);
         }
     }
 }

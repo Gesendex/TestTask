@@ -176,7 +176,7 @@ namespace TestTask.Tests
         }
 
         [Fact]
-        public void GetPeople_ShouldReturn2Records_When_Count_2()
+        public void GetPeople_ShouldReturn2Records_When_pageSize_2()
         {
             // Arrange
             int expected = 2;
@@ -184,13 +184,15 @@ namespace TestTask.Tests
             _peopleRepositoryMock.Setup(x => x.GetPeople()).Returns(testPeople);
 
             // Act
-            var people = _sut.GetPeople(count: 2);
+            var people = _sut.GetPeople(pageSize: 2);
 
             // Assert
             Assert.Equal(expected, people.Count());
+            Assert.True(people.First().Id == "id1");
+            Assert.True(people.Last().Id == "id2");
         }
         [Fact]
-        public void GetPeople_ShouldSkip2RecordsAndReturnOthers_When_Start_2()
+        public void GetPeople_ShouldSkip2RecordsAndReturnOthers_When_pageSize_2_pageNumber_2()
         {
             // Arrange
             int expected = 2;
@@ -198,7 +200,7 @@ namespace TestTask.Tests
             _peopleRepositoryMock.Setup(x => x.GetPeople()).Returns(testPeople);
 
             // Act
-            var people = _sut.GetPeople(start: 2);
+            var people = _sut.GetPeople(pageSize: 2, pageNumber: 2);
 
             // Assert
             Assert.Equal(expected, people.Count());
