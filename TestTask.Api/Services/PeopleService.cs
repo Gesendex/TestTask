@@ -23,7 +23,7 @@ namespace TestTask.Api.Services
                 people = people.Where(p => p.Sex == sex);
             }
 
-            if(y > x)
+            if(y > 0)
             {
                 people = people.Where(p => p.Age < y && p.Age > x);
             }

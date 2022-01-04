@@ -169,10 +169,9 @@ namespace TestTask.Tests
             _peopleRepositoryMock.Setup(x => x.GetPeople()).Returns(testPeople);
 
             // Act
-            var people = _sut.GetPeople(x: 50, y: 20);
-
+            var people = _sut.GetPeople(x: 50, y: 20).ToList();
             // Assert
-            Assert.False(people.All(p => p.Age < 50 && p.Age > 20));
+            Assert.True(people.All(p => p.Age > 50 && p.Age < 20));
         }
 
         [Fact]
