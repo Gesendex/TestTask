@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace TestTask.Api.Queries
 {
     /// <summary>
-    /// Класс описывает настроки страницы.
+    /// Класс описывает настройки страницы.
     /// </summary>
     public class PaginationQuery
     {
@@ -14,6 +14,11 @@ namespace TestTask.Api.Queries
         {
             PageNumber = 1;
             PageSize = 50;
+        }
+        public PaginationQuery(int pageNumber, int pageSize)
+        {
+            PageNumber = pageNumber;
+            PageSize = pageSize;
         }
         private int _pageNumber;
         public int PageNumber

@@ -26,7 +26,7 @@ namespace TestTask.Api.Controllers
         public IActionResult GetPeople(string sex, int x, int y,[FromQuery] PaginationQuery paginationQuery)
         {
             var result = _peopleService.GetPeople(sex, x, y, paginationQuery.PageNumber, paginationQuery.PageSize)
-                .Select(s => new { Id = s.Id, Name = s.Name, Sex = s.Sex })
+                .Select(s => new { Id = s.Id, Name = s.Name, Sex = s.Sex })//Привел к виду (Id, Name, Sex)
                 .AsEnumerable();
             
             return Ok(result);
